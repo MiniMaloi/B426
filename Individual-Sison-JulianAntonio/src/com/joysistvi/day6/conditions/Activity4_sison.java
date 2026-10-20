@@ -5,8 +5,14 @@ public class Activity4_sison {
         Scanner scanner = new Scanner(System.in);
         System.out.println("---Age Categorizer---");
         System.out.println("Whats your age?: ");
-        int age =scanner.nextInt();
+        int age = scanner.nextInt();
         String category;
+
+        if (age < 0 || age > 100){
+            System.out.println("Invalid Age, try again later");
+            scanner.close();
+            return;
+        }
 
         if (age >= 0 && age <= 2 ){
             category = "Baby";
@@ -18,14 +24,11 @@ public class Activity4_sison {
             category = "Young Adult";
         } else if (age >= 30 && age <= 59 ){
             category = "Adult";
-        } else if (age >= 60 && age <= 100 ){
+        } else {
             category = "Senior";
         }
-        else {
-            category = "I have never met someone like you";
-        }
-
 
         System.out.printf("Your age is: %d %nand it falls under: %s category", age, category);
+        scanner.close();
     }
 }
