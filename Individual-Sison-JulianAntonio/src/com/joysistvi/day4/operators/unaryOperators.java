@@ -7,7 +7,7 @@ public class unaryOperators {
         int num = 10;
         boolean isActive = false;
         int num2 = 69;
-        int num3 = 70;
+        //int num3 = 70;
 
         //negating an expression
         System.out.println(-num);
