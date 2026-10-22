@@ -5,7 +5,7 @@ public class Activity3_sison {
 
         int age = 21;
         int validAge = 18;
-        int firstNum = 40;
+        int firstNum = 200;
         int secondNum = 100;
         int score = 67;
         boolean hasValidID = true;
