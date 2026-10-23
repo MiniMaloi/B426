@@ -2,18 +2,18 @@ package com.joysistvi.day4.operators;
 
 public class Activity2_sison {
     public static void main(String[] args) {
-        double income = 50000;
-        double foodAllowance = 15000;
-        double transportation = 2500;
-        double rent = 4500;
-        double utilityBill = 3500;
-        double percentFoodAllowance = (foodAllowance / income) * 100;
-        double percentTransportation = (transportation / income) * 100;
-        double percentRent = (rent / income) * 100;
-        double percentUtility = (utilityBill / income) * 100;
-        double totalCost = foodAllowance + transportation + rent + utilityBill;
-        double remainingBalance = income - totalCost;
-        double percentRemainingBalance = (remainingBalance / income) * 100;
+        double  income = 50000,
+                foodAllowance = 15000,
+                transportation = 2500,
+                rent = 4500,
+                utilityBill = 3500,
+                percentFoodAllowance = (foodAllowance / income) * 100,
+                percentTransportation = (transportation / income) * 100,
+                percentRent = (rent / income) * 100,
+                percentUtility = (utilityBill / income) * 100,
+                totalCost = foodAllowance + transportation + rent + utilityBill,
+                remainingBalance = income - totalCost,
+                percentRemainingBalance = (remainingBalance / income) * 100;
 
         System.out.println("-----------------Sison's Budget Tracker------------------");
         System.out.printf("Total Income: $%,.0f%n", income);

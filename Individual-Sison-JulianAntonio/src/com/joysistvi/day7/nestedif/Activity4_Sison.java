@@ -30,40 +30,38 @@ public class Activity4_Sison {
                     int goPlus = scanner.nextInt();
 
                     if (goPlus >= 1 || goPlus <= 3){
-                    switch (goPlus) {
-                        case 1:
-                            System.out.println("-> Get 8 GB for all sites + 8GB more");
-                            break;
-                        case 2:
-                            System.out.println("-> Get 11 GB for all sites + 8GB more");
-                            break;
-                        case 3:
-                            System.out.println("-> Get 13 GB for all sites + 8GB more");
-                            break;
-                        }
-
-                        System.out.print(
-                                "[1] Subscribe \n" +
-                                "[2] Exit \n" +
-                                "Enter a choice: ");
-                        int action = scanner.nextInt();
-
-                        if (action == 1) {
-                            if (goPlus == 1) {
-                                System.out.println("You are now subscribed to Go+99");
-                            } else if (goPlus == 2) {
-                                System.out.println("You are now subscribed to Go+129");
-                            } else {
-                                System.out.println("You are now subscribed to Go+149");
+                        switch (goPlus) {
+                            case 1:
+                                System.out.println("-> Get 8 GB for all sites + 8GB more");
+                                break;
+                            case 2:
+                                System.out.println("-> Get 11 GB for all sites + 8GB more");
+                                break;
+                            case 3:
+                                System.out.println("-> Get 13 GB for all sites + 8GB more");
+                                break;
                             }
-                        } else if (goPlus == 2) {
-                            System.out.println("Transaction Cancelled");
-                        } else {
-                            System.out.println("Invalid Choice");
-                        }
+                            System.out.print(
+                                    "[1] Subscribe \n" +
+                                    "[2] Exit \n" +
+                                    "Enter a choice: ");
+                            int action = scanner.nextInt();
+
+                            if (action == 1) {
+                                if (goPlus == 1) {
+                                    System.out.println("You are now subscribed to Go+99");
+                                } else if (goPlus == 2) {
+                                    System.out.println("You are now subscribed to Go+129");
+                                } else {
+                                    System.out.println("You are now subscribed to Go+149");
+                                }
+                            } else if (goPlus == 2) {
+                                System.out.println("Transaction Cancelled");
+                            } else {
+                                System.out.println("Invalid Choice");
+                            }
                     } else {
                         System.out.println("Invalid Choice");
-
                     }
                     break;
                 case 2:
