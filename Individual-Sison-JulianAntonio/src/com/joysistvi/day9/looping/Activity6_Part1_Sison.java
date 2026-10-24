@@ -6,11 +6,13 @@ public class Activity6_Part1_Sison {
         System.out.print("Simpol Multiplication \n" +
                          "Enter the multiplication table you want to display: ");
         int num = scanner.nextInt();
-        System.out.println("Multiplication of Paybb (5)");
-        for (int num2 = 1; num2 <= 10; num2++ ){
-            int out = num * num2;
-            System.out.print(num + " x " + num2 + " = " + out + "\n");
-            scanner.close();
+        System.out.print("Multiplication of " + num);
+            for (int num2 = 1; num2 <= 10; num2++ ) {
+                while (num >= 10 || num <= 1){
+                System.out.print(num + " x " + num2 + " = " + (num * num2) + "\n");
+                scanner.close();
+            }
+                System.out.println("Invalid, input must be between 1 - 10");
+            }
         }
     }
-}
