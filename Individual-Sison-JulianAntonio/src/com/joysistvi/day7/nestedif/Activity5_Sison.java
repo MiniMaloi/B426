@@ -1,6 +1,6 @@
 package com.joysistvi.day7.nestedif;
 import java.util.Scanner;
-public class Activity4_Sison {
+public class Activity5_Sison {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
