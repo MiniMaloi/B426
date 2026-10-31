@@ -1,4 +1,4 @@
-package com.joysistvi.day14.IntroOOP;
+package com.joysistvi.day15.IntroOOP;
 
 public class Main {
     public static void main(String[] args) {

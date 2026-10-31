@@ -1,4 +1,4 @@
-package com.joysistvi.day15.mathMethods;
+package com.joysistvi.day14.mathMethods;
 import java.util.*;
 public class activity11_Sison {
         public static void main(String[] args) {
