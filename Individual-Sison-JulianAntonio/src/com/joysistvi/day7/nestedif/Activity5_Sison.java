@@ -125,7 +125,7 @@ public class Activity5_Sison {
                                 System.out.println("-> 10 GB all-access data + unli all-net calls and texts");
                                 break;
                             case 3:
-                                System.out.println("-> 5 GB all-access data + unli all-net calls and texts");
+                                System.out.println("-> 15 GB all-access data + unli all-net calls and texts");
                                 break;
                         }
 
