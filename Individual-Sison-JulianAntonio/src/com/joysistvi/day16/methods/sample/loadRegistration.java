@@ -7,6 +7,7 @@
         static boolean running = true;
         static int loadBalance = 200;
         static String activePromo = "None";
+        static int daysDuration = 0;
 
         public static void main(String[] args) {
 
@@ -56,6 +57,7 @@
                 System.out.println("No promo currently registered.");
             } else {
                 System.out.println("Registered Promo: " + activePromo);
+                System.out.println("Promo duration: " + daysDuration);
             }
 
             System.out.println("Regular Load Balance: P" + loadBalance);
@@ -99,9 +101,9 @@
                 int goPlus = getInput("Enter a choice: ");
 
                 switch (goPlus) {
-                    case 1 -> promoDetailsMenu("Go+99", 8, " with free 8GB", "", 99);
-                    case 2 -> promoDetailsMenu("Go+129", 11, " with free 8GB", "", 129);
-                    case 3 -> promoDetailsMenu("Go+149", 13, " with free 8GB", "", 149);
+                    case 1 -> promoDetailsMenu("Go+99", 8, " with free 8GB", "", 99, 7);
+                    case 2 -> promoDetailsMenu("Go+129", 11, " with free 8GB", "", 129, 14);
+                    case 3 -> promoDetailsMenu("Go+149", 13, " with free 8GB", "", 149, 14);
                     case 4 -> {
                         return;
                     }
@@ -123,9 +125,9 @@
                 int go = getInput("Enter a choice: ");
 
                 switch (go) {
-                    case 1 -> promoDetailsMenu("Go50", 3, "", "", 50);
-                    case 2 -> promoDetailsMenu("Go90", 8, "", "", 90);
-                    case 3 -> promoDetailsMenu("Go120", 12, "", "", 120);
+                    case 1 -> promoDetailsMenu("Go50", 3, "", "", 50, 3);
+                    case 2 -> promoDetailsMenu("Go90", 8, "", "", 90, 5);
+                    case 3 -> promoDetailsMenu("Go120", 12, "", "", 120, 7);
                     case 4 -> {
                         return;
                     }
@@ -146,9 +148,9 @@
                 int goExtra = getInput("Enter a choice: ");
 
                 switch (goExtra) {
-                    case 1 -> promoDetailsMenu("GoEXTRA99", 8, " and unli all-net calls and texts", "", 99);
-                    case 2 -> promoDetailsMenu("GoEXTRA129", 10, " and unli all-net calls and texts", "", 129);
-                    case 3 -> promoDetailsMenu("GoEXTRA149", 15, " and unli all-net calls and texts", "", 149);
+                    case 1 -> promoDetailsMenu("GoEXTRA99", 8, " and unli all-net calls and texts", "", 99, 3);
+                    case 2 -> promoDetailsMenu("GoEXTRA129", 10, " and unli all-net calls and texts", "", 129, 7);
+                    case 3 -> promoDetailsMenu("GoEXTRA149", 15, " and unli all-net calls and texts", "", 149, 14);
                     case 4 -> {
                         return;
                     }
@@ -170,9 +172,9 @@
 
                 switch (unli5G) {
 
-                    case 1 -> promoDetailsMenu("UNLI 5G 99", 100, "", "for 1 day", 99);
-                    case 2 -> promoDetailsMenu("UNLI 5G 149", 100, "", "for 3 day", 149);
-                    case 3 -> promoDetailsMenu("UNLI 5G 199", 100, "", "for 7 day", 199);
+                    case 1 -> promoDetailsMenu("UNLI 5G 99", 100, "", "for 1 day", 99, 1);
+                    case 2 -> promoDetailsMenu("UNLI 5G 149", 100, "", "for 3 day", 149, 3);
+                    case 3 -> promoDetailsMenu("UNLI 5G 199", 100, "", "for 7 day", 199, 7);
                     case 4 -> {
                         return;
                     }
@@ -193,11 +195,11 @@
                 int allNet = getInput("Enter a choice: ");
 
                 switch (allNet) {
-                    case 1 -> promoDetailsMenu("ALLNET99", 1, "and unli calls and texts to all networks", "for 3 days", 99);
+                    case 1 -> promoDetailsMenu("ALLNET99", 1, "and unli calls and texts to all networks", "for 3 days", 99, 3);
                     case 2 ->
-                            promoDetailsMenu("ALLNET149", 2, "and unli calls and texts to all networks", "for 7 days", 149);
+                            promoDetailsMenu("ALLNET149", 2, "and unli calls and texts to all networks", "for 7 days", 149, 7);
                     case 3 ->
-                            promoDetailsMenu("ALLNET199", 3, "and unli calls and texts to all networks", "for 14 days", 199);
+                            promoDetailsMenu("ALLNET199", 3, "and unli calls and texts to all networks", "for 14 days", 199, 14);
                     case 4 -> {
                         return;
                     }
@@ -207,10 +209,10 @@
             }
         }
 
-        public static void promoDetailsMenu(String promoName, int GB, String free, String noOfDays, int price) {
+        public static void promoDetailsMenu(String promoName, int GB, String free, String daysPromo, int price, int days) {
             while (running) {
                 System.out.print("\n*** " + promoName + "Promo ***\n" +
-                        "Get " + GB + "GB for all sites" + free + noOfDays +
+                        "Get " + GB + "GB for all sites" + free + daysPromo +
                         "\nfor P" + price +
                         "\n[1] Subscribe \n" +
                         "[2] Exit \n" +
@@ -221,7 +223,7 @@
                 switch (action) {
 
                     case 1 -> {
-                        if (subscribe(promoName, price)) {
+                        if (subscribe(promoName, price, days)) {
                             actions();
 
                             System.out.println("Registered Promo: " + activePromo);
@@ -252,14 +254,16 @@
             System.out.println("    Thank you for choosing Globe    ");
         }
 
-        public static boolean subscribe(String promoName, int price) {
+        public static boolean subscribe(String promoName, int price, int days) {
             if (loadBalance >= price) {
                 loadBalance -= price;
                 activePromo = promoName;
+                daysDuration = days;
                 return true;
             } else {
                 System.out.println("\nInsufficient Load Balance!");
                 System.out.println("Current Balance: P" + loadBalance);
+                System.out.println("Promo duration: " + daysDuration);
                 return false;
             }
         }
