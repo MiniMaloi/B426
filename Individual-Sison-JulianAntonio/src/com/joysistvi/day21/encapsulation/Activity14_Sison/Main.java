@@ -1,4 +1,4 @@
-package com.joysistvi.day21.encapsulation.Activity13_Sison;
+package com.joysistvi.day21.encapsulation.Activity14_Sison;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
