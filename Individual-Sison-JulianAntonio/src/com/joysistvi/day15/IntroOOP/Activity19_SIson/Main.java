@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         SavingsAccount savings = new SavingsAccount(
-                "1001", "Juan Dela Cruz", 5000.0);
+                "1001", "Cyril Anne Domingo", 5000.0);
 
         CheckingAccount checking = new CheckingAccount(
                 "2001", "Maria Santos", 1000.0);
